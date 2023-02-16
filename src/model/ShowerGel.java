@@ -5,17 +5,17 @@ public class ShowerGel extends Product{
     public ShowerGel() {
     }
 
-    public ShowerGel(String id, String name, int volume, int amount, double price) {
+    public ShowerGel(int id, String name, int volume, int amount, double price) {
         super(id, name, volume, amount, price);
     }
 
     @Override
-    public String getId() {
+    public int getId() {
         return super.getId();
     }
 
     @Override
-    public void setId(String id) {
+    public void setId(int id) {
         super.setId(id);
     }
 

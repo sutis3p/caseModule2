@@ -10,6 +10,8 @@ public class Client {
     public static void main(String[] args) {
         ProductManager productManager = new ProductManager();
         AccountManager accountManager = new AccountManager();
+        AdminMenu adminMenu = new AdminMenu();
+        UserMenu userMenu = new UserMenu();
 
         while (true){
             int choice = 0;
@@ -18,6 +20,7 @@ public class Client {
                     |   Mời nhập lựa chọn  |
                     | 1. Đăng kí           |
                     | 2. Đăng nhập         |
+                    ------------------------
                     """);
             choice = Integer.parseInt(scanner.nextLine());
 
@@ -32,9 +35,18 @@ public class Client {
                     String username = scanner.nextLine();
                     System.out.println("Nhập mật khẩu");
                     String password = scanner.nextLine();
-                    if (username.equals("Admin")){
-                        if (password.equals("1"));
-                        
+                    if (username.equals("Admin")) {
+                        if (password.equals("1"))
+                            adminMenu.showAdminMenu();
+                        else System.out.println("Sai mật khẩu admin");
+                    }else {
+                        if(accountManager.login(username,password)!=-1) {
+                            System.out.println("Đăng nhập thành công");
+                            AccountManager.indexUser = accountManager.login(username, password);
+                            userMenu.showMenuUser();
+                        } else {
+                            System.out.println("Mật khẩu hoặc tài khoản đã sai");
+                        }
                     }
                 }
             }

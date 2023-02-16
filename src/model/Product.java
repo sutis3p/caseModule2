@@ -3,7 +3,7 @@ package model;
 import java.io.Serializable;
 
 public class Product implements Serializable {
-    private String id;
+    private int id;
     private String name;
 //    thể tích, dung tích sản phẩm
     private int volume;
@@ -15,7 +15,7 @@ public class Product implements Serializable {
     }
 
 
-    public Product(String id, String name, int volume, int amount, double price) {
+    public Product(int id, String name, int volume, int amount, double price) {
         this.id = id;
         this.name = name;
         this.volume = volume;
@@ -24,11 +24,11 @@ public class Product implements Serializable {
     }
 
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

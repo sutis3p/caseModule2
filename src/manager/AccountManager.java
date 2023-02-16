@@ -11,8 +11,6 @@ public class AccountManager {
 
     public static int indexUser;
 
-// tạo một quản trị viên cố định
-
     final Account Admin = new Account("Admin","1","Quản trị viên",19);
 
     public AccountManager(){
@@ -36,7 +34,7 @@ public class AccountManager {
         } while (username.equals("") || password.equals("") || name.equals("") || age > 120 || age < 0);
     }
 
-    public int dangNhap(String username, String password) {
+    public int login(String username, String password) {
         int check = 0;
         for (int i = 0; i < listAccount.size(); i++) {
             if (username.equals(listAccount.get(i).getUsername())) {
@@ -48,7 +46,7 @@ public class AccountManager {
         return -1;
     }
 
-    public boolean login(Account account) {
+    public boolean checkLogin(Account account) {
         for (int i = 0; i < listAccount.size(); i++) {
             if (account.getUsername().equals(listAccount.get(i).getUsername()) && account.getPassword().equals(listAccount.get(i).getPassword()))
                 return true;
