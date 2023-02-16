@@ -7,13 +7,14 @@ import java.util.Scanner;
 
 public class Client {
     static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         ProductManager productManager = new ProductManager();
         AccountManager accountManager = new AccountManager();
         AdminMenu adminMenu = new AdminMenu();
         UserMenu userMenu = new UserMenu();
 
-        while (true){
+        while (true) {
             int choice = 0;
             System.out.println("""
                     ------------------------
@@ -39,8 +40,8 @@ public class Client {
                         if (password.equals("1"))
                             adminMenu.showAdminMenu();
                         else System.out.println("Sai mật khẩu admin");
-                    }else {
-                        if(accountManager.login(username,password)!=-1) {
+                    } else {
+                        if (accountManager.login(username, password) != -1) {
                             System.out.println("Đăng nhập thành công");
                             AccountManager.indexUser = accountManager.login(username, password);
                             userMenu.showMenuUser();
