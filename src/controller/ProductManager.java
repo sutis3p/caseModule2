@@ -1,4 +1,4 @@
-package manager;
+package controller;
 
 import model.BodyMist;
 import model.Product;
@@ -33,7 +33,7 @@ public class ProductManager {
                 int amount = Integer.parseInt(scanner.nextLine());
                 System.out.println("Nhập giá cho sản phẩm : ");
                 double price = Double.parseDouble(scanner.nextLine());
-                Product bodyMist = new BodyMist(id,name,volume,amount,price);
+                BodyMist bodyMist = new BodyMist(id,name,volume,amount,price);
                 return bodyMist;
             } else {
                 id++;
@@ -45,7 +45,7 @@ public class ProductManager {
                 int amount = Integer.parseInt(scanner.nextLine());
                 System.out.println("Nhập giá cho sản phẩm : ");
                 double price = Double.parseDouble(scanner.nextLine());
-                Product showerGel = new ShowerGel(id,name,volume,amount,price);
+                ShowerGel showerGel = new ShowerGel(id,name,volume,amount,price);
                 return showerGel;
             }
     }
@@ -63,6 +63,7 @@ public class ProductManager {
         return -1;
     }
     public void edit(int index, Product product){
+
         listProducts.set(index,product);
         listProducts.get(index).setName(product.getName());
         listProducts.get(index).setVolume(product.getVolume());

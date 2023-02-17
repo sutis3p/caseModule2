@@ -1,7 +1,7 @@
 package view;
 
-import manager.AccountManager;
-import manager.ProductManager;
+import controller.AccountManager;
+import controller.ProductManager;
 
 import java.util.Scanner;
 
@@ -29,6 +29,7 @@ public class Client {
                 case 1 -> {
                     System.out.println("Đăng kí: ");
                     accountManager.CreateAccount();
+                    System.out.println(AccountManager.listAccount);
                 }
                 case 2 -> {
                     System.out.println("Đăng nhập: ");

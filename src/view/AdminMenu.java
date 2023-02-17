@@ -1,6 +1,6 @@
 package view;
 
-import manager.ProductManager;
+import controller.ProductManager;
 
 import java.util.Scanner;
 

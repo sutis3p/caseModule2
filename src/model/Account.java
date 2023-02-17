@@ -7,6 +7,7 @@ public class Account {
     private int age;
 
     public Account() {
+
     }
 
     public Account(String username, String password, String name, int age) {
